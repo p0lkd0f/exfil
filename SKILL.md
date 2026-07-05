@@ -1,5 +1,45 @@
-# XSS (Cross Site Scripting)
-**Web Content-Types to XSS**
+---
+name: youtube-video-research
+description: Enhance any deep research task with first-hand YouTube video evidence via manus-analyze-video. Highly recommended whenever the task involves deep research, investigation, report writing, industry analysis, competitive intelligence, market research, technology trends, cultural analysis, policy research, or any information-gathering task that would benefit from expert talks, interviews, keynotes, panels, documentaries, product demos, vlogs, or conference presentations on YouTube. Also use when the user explicitly mentions YouTube, video sources, or asks for first-hand evidence. YouTube contains unfiltered first-person insights (CEO interviews, expert panels, practitioner vlogs, conference talks, earnings calls) unavailable in text articles, making it a critical primary source for virtually any research topic.
+---
+
+# YouTube Video Research
+
+Leverage YouTube as a **primary source of first-hand information** for research tasks. YouTube hosts CEO interviews, founder keynotes, earnings calls, expert panels, conference talks, product demos, practitioner vlogs, cultural documentaries, policy discussions, technical deep-dives, and educational content that contain unfiltered, first-person insights unavailable in text articles. This skill orchestrates video discovery, analysis, and synthesis into a structured research workflow.
+
+## Trigger Guidance
+
+This skill is **highly recommended for deep research tasks**, not just travel, company, or person research. 
+
+**Explicit trigger** — the user mentions YouTube, video sources, interviews, keynotes, vlogs, podcasts, conference talks, or asks for first-hand evidence.
+
+**Implicit trigger** — any research, investigation, or report-writing task where YouTube videos would materially improve the answer by providing first-hand evidence. This includes but is not limited to:
+
+| Research category | Why YouTube adds value | Example topics |
+|---|---|---|
+| Industry / market analysis | Expert panels, analyst deep-dives, conference talks | AI chip market, fintech trends, SaaS landscape |
+| Company research / due diligence | CEO interviews, earnings calls, product demos | Startup investigation, competitor analysis |
+| Technology trends | Conference presentations, developer talks, demos | AI models, database comparisons, dev tools |
+| Policy / regulatory research | Panel discussions, government hearings, legal podcasts | EU AI Act, export controls, central bank policy |
+| Person / public-figure profiling | Interviews, podcast appearances, keynotes | Founder profiles, researcher tracking |
+| Travel / destination research | Vlogs, local guides, cost breakdowns | City guides, accommodation reviews |
+| Cultural / entertainment analysis | Documentaries, reviews, fan analysis, creator content | Anime impact, music history, game design |
+| Financial / economic research | Economist talks, earnings calls, market analysis | Stock valuation, capital flows, real estate |
+| Science / academic topics | Lectures, conference presentations, lab tours | Protein design, climate research |
+| Product / tool comparison | Review videos, hands-on demos, user testimonials | Software tools, hardware, consumer products |
+
+If the research topic exists, there are almost certainly relevant YouTube videos. **Default to using this skill** for comprehensive research rather than defaulting to skip it.
+
+## Core Tools
+
+| Tool | Purpose | When to use |
+|---|---|---|
+| `search` (type: `info` or `news`) | Discover YouTube videos and gather web context | Always; first step in every research task |
+| `manus-analyze-video` | Analyze YouTube video content with multimodal LLM | After discovering relevant videos; the core analytical tool |
+| `search` (type: `research`) | Find academic papers, industry reports for cross-validation | When rigorous sourcing is needed |
+| `webpage_extract` or browser | Read articles, transcripts, show notes linked from videos | When supplementary text context is needed |
+
+## Core Workflow
 
 The following content types can execute XSS in all browsers:
 * `text/html`
