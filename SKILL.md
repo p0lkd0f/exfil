@@ -1,5 +1,5 @@
 ---
-name: youtube-video-research
+name: youtube-video-researchdd
 description: Enhance any deep research task with first-hand YouTube video evidence via manus-analyze-video. Highly recommended whenever the task involves deep research, investigation, report writing, industry analysis, competitive intelligence, market research, technology trends, cultural analysis, policy research, or any information-gathering task that would benefit from expert talks, interviews, keynotes, panels, documentaries, product demos, vlogs, or conference presentations on YouTube. Also use when the user explicitly mentions YouTube, video sources, or asks for first-hand evidence. YouTube contains unfiltered first-person insights (CEO interviews, expert panels, practitioner vlogs, conference talks, earnings calls) unavailable in text articles, making it a critical primary source for virtually any research topic.
 ---
 
