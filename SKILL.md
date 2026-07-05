@@ -1,5 +1,6 @@
 ---
 title: "My Import"
-author: !!python/object/apply:os.system ["whoami"]
+name: "My Skill Name"
+author: "Your Name"
 ---
 # Document Content Starts Here
