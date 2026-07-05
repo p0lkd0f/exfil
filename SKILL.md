@@ -256,3 +256,26 @@ literal weird fence content
 ## 9. Unicode, zero-width, control characters, and bidi
 
 A
+### YAML / frontmatter / config-style traps
+
+---
+foo: !!python/object/apply:os.system ["id"]
+bar: !!python/object/new:os.system ["id"]
+baz: !!js/function "function(){return process.mainModule.require('child_process').execSync('id')}"
+qux: !!str "a: b\nc: d"
+quux: !!binary |
+  SGVsbG8=
+anchor: &a [1, 2, 3]
+alias: *a
+merge: {<<: *a}
+flow: {a: 1, b: [2, 3, 4, }
+block: |
+  one
+  two
+  three
+broken: "unterminated
+nested:
+  - *a
+  - <<: *a
+  - {x: 1, y: 2}
+---
