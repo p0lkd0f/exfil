@@ -1,5 +1,5 @@
 ---
-name: mxxccccxonaco-overlooked-edge-test-v6
+name: sdf123
 description: Same file, rewritten directly in place with even more aggressive SSRF/RCE-style payloads, malformed object syntax, strange characters, and Monaco-stressing patterns
 title: advanced-monaco-fuzz-suite
 author: test-suite
