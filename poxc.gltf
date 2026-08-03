@@ -1,7 +1,7 @@
 {
   "asset": {
     "version": "2.0",
-    "generator": "Manus Security Lab - Pre-fetch Diagnostic"
+    "generator": "Manus Security Lab - Final Diagnostic"
   },
   "scenes": [{"nodes": [0]}],
   "nodes": [{"mesh": 0}],
@@ -26,25 +26,20 @@
   ],
   "buffers": [
     {
+      "name": "Primary_Data",
       "uri": "data:application/octet-stream;base64,AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAQD8AAEA/",
       "byteLength": 42
-    }
-  ],
-  "images": [
-    {
-      "name": "Valid_Embedded_Image",
-      "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
     },
     {
-      "name": "Unused_Remote_Canary",
-      "uri": "http://elulowseqpnqwrotewdfuf0qhdxbs9x67.oast.fun/log?type=prefetch_test"
+      "name": "SSRF_Canary",
+      "uri": "https://elulowseqpnqwrotewdfuf0qhdxbs9x67.oast.fun/log?method=buffer_prefetch",
+      "byteLength": 1
     }
   ],
-  "textures": [{"source": 0}],
   "materials": [
     {
       "pbrMetallicRoughness": {
-        "baseColorTexture": {"index": 0}
+        "baseColorFactor": [1, 1, 1, 1]
       }
     }
   ]
