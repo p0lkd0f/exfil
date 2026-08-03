@@ -1,30 +1,38 @@
 {
   "accessors": [
     {
-      "bufferView": 99,
+      "bufferView": 0,
       "componentType": 5126,
-      "count": 999999,
+      "count": 406,
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "componentType": 9999,
-      "count": -1,
+      "componentType": 5126,
+      "count": 406,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5126,
       "count": 406,
-      "type": "VEC5"
+      "type": "VEC4"
     },
     {
       "bufferView": 3,
       "componentType": 5126,
       "count": 406,
       "type": "VEC3",
-      "max": [0.0],
-      "min": [1.0, 2.0, 3.0, 4.0]
+      "max": [
+        0.02128091,
+        0.06284806,
+        0.0138090011
+      ],
+      "min": [
+        -0.02128091,
+        -4.773855E-05,
+        -0.013809
+      ]
     },
     {
       "bufferView": 4,
@@ -33,31 +41,29 @@
       "type": "SCALAR"
     }
   ],
-
   "asset": {
-    "generator": "Malformed Test",
+    "generator": "glTF Tools for Unity\"><img src=x>",
     "version": "2.0"
   },
-
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": -100
+      "byteLength": 3248
     },
     {
       "buffer": 0,
-      "byteOffset": 9999999,
+      "byteOffset": 3248,
       "byteLength": 4872
     },
     {
-      "buffer": 5,
+      "buffer": 0,
       "byteOffset": 8120,
       "byteLength": 6496
     },
     {
       "buffer": 0,
       "byteOffset": 14616,
-      "byteLength": 0
+      "byteLength": 4872
     },
     {
       "buffer": 0,
@@ -65,63 +71,85 @@
       "byteLength": 4092
     }
   ],
-
   "buffers": [
     {
-      "uri": "Missing.bin",
-      "byteLength": 1
+      "uri": "Avocado.bin",
+      "byteLength": 23580
     }
   ],
-
   "images": [
     {
-      "uri": "does_not_exist.png"
+      "uri": "x.png"
+    },
+    {
+      "uri": "x.png"
+    },
+    {
+      "uri": "x.png"
     }
   ],
-
   "meshes": [
     {
       "primitives": [
         {
           "attributes": {
-            "POSITION": 999,
-            "NORMAL": 1
+            "TEXCOORD_0": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "POSITION": 3
           },
-          "indices": 42,
-          "material": 5
+          "indices": 4,
+          "material": 0
         }
-      ]
+      ],
+      "name": "Avocado"
     }
   ],
-
   "materials": [
     {
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 99
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
         }
-      }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "name": "2256_Avocado_d"
     }
   ],
-
   "nodes": [
     {
-      "mesh": 8,
-      "rotation": [0.0, 1.0]
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "name": "Avocado"
     }
   ],
-
-  "scene": 5,
-
+  "scene": 0,
   "scenes": [
     {
-      "nodes": [999]
+      "nodes": [
+        0
+      ]
     }
   ],
-
   "textures": [
     {
-      "source": 12
+      "source": 0
+    },
+    {
+      "source": 1
+    },
+    {
+      "source": 2
     }
   ]
 }
