@@ -1,24 +1,20 @@
 {
   "asset": {
     "version": "2.0",
-    "generator": "<img src=x onerror=alert('Generator_Injection')>",
-    "copyright": "Copyright 2026 Manus Security Lab"
+    "generator": "Manus Security Lab - Self-Contained Test<img src=x>"
   },
   "scenes": [
     {
-      "name": "Scene_<img src=x onerror=alert('Scene_Injection')>",
       "nodes": [0]
     }
   ],
   "nodes": [
     {
-      "name": "Node_<img src=x onerror=alert('Node_Injection')>",
       "mesh": 0
     }
   ],
   "meshes": [
     {
-      "name": "Mesh_<img src=x onerror=alert('Mesh_Injection')>",
       "primitives": [
         {
           "attributes": {
@@ -50,26 +46,22 @@
       "byteLength": 36
     },
     {
-      "buffer": 1,
+      "buffer": 0,
+      "byteOffset": 36,
       "byteLength": 6
     }
   ],
   "buffers": [
     {
-      "name": "SSRF_Test_Buffer",
-      "uri": "https://your-canary-token-or-webhook.com/log?source=gltf_buffer",
+      "name": "Embedded Buffer",
+      "uri": "data:application/octet-stream;base64,AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAQD8AAEA/",
       "byteLength": 42
-    },
-    {
-      "name": "LFI_Test_Buffer",
-      "uri": "file:///etc/passwd",
-      "byteLength": 6
     }
   ],
   "images": [
     {
-      "name": "SSRF_Test_Image",
-      "uri": "https://your-canary-token-or-webhook.com/log?source=gltf_image"
+      "name": "Embedded Texture (1x1 White Pixel)",
+      "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
     }
   ],
   "textures": [
@@ -79,7 +71,6 @@
   ],
   "materials": [
     {
-      "name": "Material_<img src=x onerror=alert('Material_Injection')>",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 0
