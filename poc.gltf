@@ -1,0 +1,51 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Manus Security Lab - Pre-fetch Diagnostic"
+  },
+  "scenes": [{"nodes": [0]}],
+  "nodes": [{"mesh": 0}],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {"POSITION": 0},
+          "indices": 1,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {"bufferView": 0, "componentType": 5126, "count": 3, "type": "VEC3"},
+    {"bufferView": 1, "componentType": 5123, "count": 3, "type": "SCALAR"}
+  ],
+  "bufferViews": [
+    {"buffer": 0, "byteLength": 36},
+    {"buffer": 0, "byteOffset": 36, "byteLength": 6}
+  ],
+  "buffers": [
+    {
+      "uri": "data:application/octet-stream;base64,AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAQD8AAEA/",
+      "byteLength": 42
+    }
+  ],
+  "images": [
+    {
+      "name": "Valid_Embedded_Image",
+      "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+    },
+    {
+      "name": "Unused_Remote_Canary",
+      "uri": "http://elulowseqpnqwrotewdfuf0qhdxbs9x67.oast.fun/log?type=prefetch_test"
+    }
+  ],
+  "textures": [{"source": 0}],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {"index": 0}
+      }
+    }
+  ]
+}
