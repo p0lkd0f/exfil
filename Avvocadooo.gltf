@@ -42,7 +42,7 @@
     }
   ],
   "asset": {
-    "generator": "glTF Tools for Unity\"><img src=x>",
+    "generator": "glTF Tools for Unity",
     "version": "2.0"
   },
   "bufferViews": [
@@ -79,13 +79,13 @@
   ],
   "images": [
     {
-      "uri": "x.png"
+      "uri": "Avocado_baseColor.png"
     },
     {
-      "uri": "x.png"
+      "uri": "Avocado_roughnessMetallic.png"
     },
     {
-      "uri": "x.png"
+      "uri": "Avocado_normal.png"
     }
   ],
   "meshes": [
