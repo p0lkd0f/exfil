@@ -98,15 +98,9 @@
     {
       "name": "2256_Avocado_d",
       "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicRoughnessTexture": {
-          "index": 1
-        }
-      },
-      "normalTexture": {
-        "index": 2
+        "baseColorFactor": [0.4, 0.6, 0.2, 1.0],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8
       }
     }
   ],
@@ -128,17 +122,6 @@
       "nodes": [
         0
       ]
-    }
-  ],
-  "textures": [
-    {
-      "source": 0
-    },
-    {
-      "source": 1
-    },
-    {
-      "source": 2
     }
   ]
 }
